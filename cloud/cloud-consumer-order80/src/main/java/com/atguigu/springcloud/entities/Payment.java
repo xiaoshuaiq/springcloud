@@ -1,6 +1,5 @@
 package com.atguigu.springcloud.entities;
 
-import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 /**
@@ -9,7 +8,6 @@ import java.io.Serializable;
  */
 public class Payment implements Serializable {
     private Long id;
-    @NotNull(message = "支付订单号不能为空")
     private String serial;
 
     public Payment(Long id, String serial) {

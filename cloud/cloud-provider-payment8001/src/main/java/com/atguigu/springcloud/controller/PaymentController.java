@@ -35,4 +35,18 @@ public class PaymentController {
             return CommonResult.fail("查询失败", null);
         }
     }
+    @GetMapping(value = "/test")
+    public CommonResult test() {
+        System.out.println("请求cpu死循环");
+        Thread.currentThread().setName("loop-thread-cpu");
+        int num = 0;
+        while (true) {
+            num++;
+            if (num == Integer.MAX_VALUE) {
+                System.out.println("reset");
+            }
+            num = 0;
+        }
+
+    }
 }
